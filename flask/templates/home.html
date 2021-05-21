@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Sistem odev</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 50%;
+        }
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        p {
+            font-family: 'Roboto', 'Noto', sans-serif;
+            color: black;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <p>IP adresiniz {{ cli_ip }}</p>
+    <p>Onceden yapilan istekler</p>
+    <table>
+        <th>IP</th>
+        <th>Tarih</th>
+        <th>Saat</th>
+
+        {% for i in visitors %}
+            <tr>
+                <td> {{ i.ip }} </td>
+                <td> {{ i.day }}</td>
+                <td> {{ i.time }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
